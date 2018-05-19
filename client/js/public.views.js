@@ -8,11 +8,11 @@
     
         element.innerHTML = `
 			<header>
-				<a>999-999-999</a>
+				<a class="phone">999-999-999</a>
 				<a>Logowanie</a>
 				<a>Rejestracja</a>
-				<a>PLN</a>
-				<a>
+				<a class="currency">PLN</a>
+				<a class="basket">
 					<small>123,57</small>
 				</a>
 			</header>
@@ -32,7 +32,7 @@
 					<a>pattern</a>
 					<a>stretch</a>
 					<a>producer</a>
-					<br>
+					<br><br>
 					<a class="color black"></a>
 					<a class="color blue"></a>
 					<a class="color purple"></a>
@@ -54,7 +54,7 @@
 					<a>Regulamin</a>
 					<a>Polityka plikow cookies</a>
 					<a>Prywatnosc</a>
-					<a>Informacje</a
+					<a>Informacje</a>
 				</div>
 				<div>
 					<h4>Informacje</h4>
@@ -62,7 +62,7 @@
 					<a>Regulamin</a>
 					<a>Polityka plikow cookies</a>
 					<a>Prywatnosc</a>
-					<a>Informacje</a
+					<a>Informacje</a>
 				</div>
 				<div>
 					<h4>Informacje</h4>
@@ -70,7 +70,7 @@
 					<a>Regulamin</a>
 					<a>Polityka plikow cookies</a>
 					<a>Prywatnosc</a>
-					<a>Informacje</a
+					<a>Informacje</a>
 				</div>
 				<a class="facebook">f</a>
 			</footer>
