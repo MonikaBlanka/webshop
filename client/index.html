@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>App</title>
+		<link href="/favicon.ico" rel="icon">
+		<link href="/css/main.css" rel="stylesheet" type="text/css">
+    </head>
+	<body data-load="public.controllers.load_language,public.views.base">
+		<script>
+
+			window.f = {
+
+				core: {
+
+					default_state: {
+						page: 'landing'
+					},
+
+					pages: {
+						'landing': 'public.views.landing',
+						'config': 'admin.views.config'
+					},
+
+					scripts: [
+
+						'/js/core.polyfill.js', // fixes browser incompatibility
+						'/js/core.loader.js', // data-load, f.loader
+						'/js/core.router.js',// data-route, f.router
+						'/js/core.events.js', // data-click, data-change, data-input, data-submit
+						'/js/core.websocket.js', // window.websocket(message_object, callback_function)
+
+						'/js/admin.models.js',
+						'/js/admin.views.js',
+						'/js/admin.controllers.js',
+
+						'/js/public.models.js',
+						'/js/public.views.js',
+						'/js/public.controllers.js',
+
+						'/js/libs/moment.js'
+
+					]
+
+				},
+
+				data: {},
+
+				public: {
+					models: {},
+					views: {},
+					controllers: {}
+				},
+
+				admin: {
+					models: {},
+					views: {},
+					controllers: {}
+				}
+
+			};
+
+			// load all scripts
+			f.core.scripts.map(function load(file){
+
+				if(!file) return onload();
+
+				let script = document.createElement('script');
+
+				script.src = file;
+
+				script.onload = onload;
+
+				document.body.appendChild(script);
+
+				return script;
+
+				function onload(){
+
+					f.core.scripts.pop();
+
+					// only continue when all scripts are loaded
+					if(f.core.scripts.length != 0) return;
+
+					// start the app
+					f.core.loader(document.body);
+
+					f.core.router({}, { replace: true });
+
+				}
+
+			});
+		</script>
+	</body>
+</html>

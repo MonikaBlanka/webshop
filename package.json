@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "supervisor -i client/css index"
+  },
+  "dependencies": {
+    "aws-sdk": "*",
+    "bcryptjs": "*",
+    "googleapis": "25.0.0",
+    "mime": "*",
+    "moment": "^2.22.0",
+    "mongodb": "*",
+    "ws": "*"
+  }
+}
