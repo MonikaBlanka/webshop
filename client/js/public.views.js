@@ -18,7 +18,7 @@
 			</header>
 
 			<div class="banner">
-				<a class="logo">supertkaniny.com</a>
+				<a class="logo"></a>
 				<div class="search">
 					<h2>Idealnie dobierz materia&#322;y do swojego wykroju</h2>
 					<input placeholder="Tu wpisz szukane materia&#322;">
@@ -47,7 +47,7 @@
 			</div>
 
 			<footer>
-				<h3>supertkaniny.com</h2>
+				<h3><a class="logo"></a></h3>
 				<div>
 					<h4>Informacje</h4>
 					<a>Kontakt</a>
@@ -96,15 +96,232 @@
 
 		<h1>Promocje</h1>
 
-		<div>Buy</div>
+		<div class="block-container">
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="v-center">dodaj do koszyka</span>
+
+				<a class="buy"></a>
+
+				<span class="next">
+
+					Szczego&#322;y
+
+				</span>
+
+			</div>
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="top">
+
+					26,00 z&#322;
+
+					<small>cena za 0,5 m</small>
+
+				</span>
+
+				<span class="botton">
+
+					<h3>We&#322;na Kaszmir</h3>
+
+					<small>bia&#322;a</small>
+
+					<div class="countdown" data-load="public.views.countdown"></div>
+
+				</span>
+
+			</div>
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="top">
+
+					26,00 z&#322;
+
+					<small>cena za 0,5 m</small>
+
+				</span>
+
+				<span class="botton">
+
+					<h3>We&#322;na Kaszmir</h3>
+
+					<small>bia&#322;a</small>
+
+					<div class="countdown" data-load="public.views.countdown"></div>
+
+				</span>
+
+			</div>
+
+		</div>
 
 		<h1>Inspiracje</h1>
 
-		<div>Buy</div>
+		<div class="block-container">
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="top">
+
+					26,00 z&#322;
+
+					<small>cena za 0,5 m</small>
+
+				</span>
+
+				<span class="botton">
+
+					<h3>We&#322;na Kaszmir</h3>
+
+					<small>bia&#322;a</small>
+
+					<div class="countdown" data-load="public.views.countdown"></div>
+
+				</span>
+
+			</div>
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="top">
+
+					26,00 z&#322;
+
+					<small>cena za 0,5 m</small>
+
+				</span>
+
+				<span class="botton">
+
+					<h3>We&#322;na Kaszmir</h3>
+
+					<small>bia&#322;a</small>
+
+					<div class="countdown" data-load="public.views.countdown"></div>
+
+				</span>
+
+			</div>
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="top">
+
+					26,00 z&#322;
+
+					<small>cena za 0,5 m</small>
+
+				</span>
+
+				<span class="botton">
+
+					<h3>We&#322;na Kaszmir</h3>
+
+					<small>bia&#322;a</small>
+
+					<div class="countdown" data-load="public.views.countdown"></div>
+
+				</span>
+
+			</div>
 
 		<h1>Najchetniej kupowane</h1>
 
-		<div>Buy</div>
+		<div class="block-container">
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="top">
+
+					26,00 z&#322;
+
+					<small>cena za 0,5 m</small>
+
+				</span>
+
+				<span class="botton">
+
+					<h3>We&#322;na Kaszmir</h3>
+
+					<small>bia&#322;a</small>
+
+					<div class="countdown" data-load="public.views.countdown"></div>
+
+				</span>
+
+			</div>
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="top">
+
+					26,00 z&#322;
+
+					<small>cena za 0,5 m</small>
+
+				</span>
+
+				<span class="botton">
+
+					<h3>We&#322;na Kaszmir</h3>
+
+					<small>bia&#322;a</small>
+
+					<div class="countdown" data-load="public.views.countdown"></div>
+
+				</span>
+
+			</div>
+
+			<div class="block" data-click="core.router" data-page="checkout">
+
+				<span class="top">
+
+					26,00 z&#322;
+
+					<small>cena za 0,5 m</small>
+
+				</span>
+
+				<span class="botton">
+
+					<h3>We&#322;na Kaszmir</h3>
+
+					<small>bia&#322;a</small>
+
+					<div class="countdown" data-load="public.views.countdown"></div>
+
+				</span>
+
+			</div>
+
+		</div>
+		
 	`;
 
+
+
+	views.checkout = `
+
+		<br><br><br>
+
+		<h1>Checkout</h1>
+
+		<br><br><br>
+
+		<button style="cursor:pointer;height:50px;display:block;width:200px;margin:0 auto" data-click="core.router" data-page="landing">Back</button>
+
+		<br><br><br>
+
+		<br><br><br>
+
+		<br><br><br>
+
+		<br><br><br>
+
+	`;
+	
 }(f.core, f.public.models, f.public.views, f.public.controllers));
