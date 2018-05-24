@@ -8,72 +8,14 @@
     
         element.innerHTML = `
 			<header>
-				<a class="phone">999-999-999</a>
-				<a>Logowanie</a>
-				<a>Rejestracja</a>
-				<a class="currency">PLN</a>
-				<a class="basket">
-					<small>123,57</small>
-				</a>
+				<a data-click="core.router" data-page="landing" class="logo"></a>
+				<a class="phone">+48 654-322-098</a>
 			</header>
-
-			<div class="banner">
-				<a class="logo"></a>
-				<div class="search">
-					<h2>Idealnie dobierz materia&#322;y do swojego wykroju</h2>
-					<input placeholder="Tu wpisz szukane materia&#322;">
-					<i class="search-icon"></i>
-				</div>
-				<div class="filters">
-					<h3>filtry</h3>
-					<br>
-					<a>category</a>
-					<a>material type</a>
-					<a>pattern</a>
-					<a>stretch</a>
-					<a>producer</a>
-					<br><br>
-					<a class="color black"></a>
-					<a class="color blue"></a>
-					<a class="color purple"></a>
-					<a class="color red"></a>
-					<a class="color yellow"></a>
-				</div>
-			</div>
 
         	<div class="page-container"
         		data-load="core.router"
         		data-route="page">
 			</div>
-
-			<footer>
-				<h3><a class="logo"></a></h3>
-				<div>
-					<h4>Informacje</h4>
-					<a>Kontakt</a>
-					<a>Regulamin</a>
-					<a>Polityka plikow cookies</a>
-					<a>Prywatnosc</a>
-					<a>Informacje</a>
-				</div>
-				<div>
-					<h4>Informacje</h4>
-					<a>Kontakt</a>
-					<a>Regulamin</a>
-					<a>Polityka plikow cookies</a>
-					<a>Prywatnosc</a>
-					<a>Informacje</a>
-				</div>
-				<div>
-					<h4>Informacje</h4>
-					<a>Kontakt</a>
-					<a>Regulamin</a>
-					<a>Polityka plikow cookies</a>
-					<a>Prywatnosc</a>
-					<a>Informacje</a>
-				</div>
-				<a class="facebook">f</a>
-			</footer>
         `;
 
     };
@@ -94,6 +36,30 @@
 
 	views.landing = `
 
+		<div class="banner">
+			<div class="search">
+				<h2>Idealnie dobierz materia&#322;y do swojego wykroju</h2>
+				<input placeholder="Tu wpisz szukane materia&#322;">
+				<i class="search-icon"></i>
+			</div>
+			<div class="filters">
+				<h3>filtry</h3>
+				<br>
+				<a>category</a>
+				<a>material type</a>
+				<a>pattern</a>
+				<a>stretch</a>
+				<a>producer</a>
+				<br><br>
+				<a class="color black"></a>
+				<a class="color blue"></a>
+				<a class="color purple"></a>
+				<a class="color red"></a>
+				<a class="color yellow"></a>
+				<a class="color white"></a>
+			</div>
+		</div>
+			
 		<h1>Promocje</h1>
 
 		<div class="block-container">
@@ -300,27 +266,99 @@
 
 		</div>
 		
+			<footer>
+				<h3><a class="logo"></a></h3>
+				<div>
+					<h4>Informacje</h4>
+					<a>Kontakt</a>
+					<a>Regulamin</a>
+					<a>Polityka plikow cookies</a>
+					<a>Prywatnosc</a>
+					<a>Informacje</a>
+				</div>
+				<div>
+					<h4>Informacje</h4>
+					<a>Kontakt</a>
+					<a>Regulamin</a>
+					<a>Polityka plikow cookies</a>
+					<a>Prywatnosc</a>
+					<a>Informacje</a>
+				</div>
+				<div>
+					<h4>Informacje</h4>
+					<a>Kontakt</a>
+					<a>Regulamin</a>
+					<a>Polityka plikow cookies</a>
+					<a>Prywatnosc</a>
+					<a>Informacje</a>
+				</div>
+				<a class="facebook">f</a>
+			</footer>
+		
 	`;
 
 
 
 	views.checkout = `
 
-		<br><br><br>
+		<div class="checkout">
 
-		<h1>Checkout</h1>
+			<h1>
+				<span class="steps">
+					<a>1</a><a>2</a><a>3</a>
+				</span>
+				BEZPIECZNE ZAKYPY
+			</h1>
 
-		<br><br><br>
 
-		<button style="cursor:pointer;height:50px;display:block;width:200px;margin:0 auto" data-click="core.router" data-page="landing">Back</button>
+			<form data-submit="public.controllers.checkout">
 
-		<br><br><br>
+				<label for="name">imu&#x1EB9;</label>
+				<input placeholder="imu&#x1EB9;" id="name">
 
-		<br><br><br>
+				<label for="surname">nazwisko</label>
+				<input placeholder="nazwisko" id="surname">
 
-		<br><br><br>
+				<label for="email">email</label>
+				<input placeholder="email@przyk&#x142;ad.pl" type="email" id="email">
 
-		<br><br><br>
+				<label for="phone">telefon</label>
+				<input placeholder="telefon" id="phone">
+
+				<br><br><a class="active" data-click="public.controllers.select_type">osoba prywatna</a><!--
+		    	--><a data-click="public.controllers.select_type">firma</a><br><br><br>
+
+				<label for="address">ulica i nr domu</label>
+				<input placeholder="ulica i nr domu" id="address">
+
+				<label for="zip">kod pocztowy</label>
+				<label for="city">miasto</label><br>
+
+				<input placeholder="kod" id="zip">
+				<input placeholder="miasto" id="city">
+
+				<br><br><br><a>inny adres wysylki</a><a>uwagi</a><br><br><br>
+				
+				<div class="checks">
+				
+					<input id="rules" type="checkbox">
+					<label for="rules">Oswiadczam iz zapoznalem sie z <span>regulaminem</span> sklepu internetowego oraz akceptuje jego postanowienia.</label>
+
+					<br><br>
+
+					<input id="privacy" type="checkbox">
+					<label for="privacy">Wyrazam zgode na przetwarzanie przez PPHU NATAN Jacek Pilarcyk, ul. St. Leszczynskiej 9, 32-600 Oswiecim, moich danych osobowych w celach zwiazanych z korzystaniem ze sklepu internetowego sklep.supertkaniny.com w zgodzie i wedlug zasad okreslonych w <span>polityce prywatnosci</span>.</label>
+					
+				</div>
+
+					<br><br>
+
+					<a class="big">wstecz</a><input type="submit" value="dalej">
+
+
+			</form>
+
+		</div>
 
 	`;
 	

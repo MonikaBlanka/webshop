@@ -15,17 +15,23 @@ html, body {
 
 body {
 	padding: 50px 0 0;
+	background: linear-gradient(180deg, rgba(213,213,213,1) 0%, rgba(235,235,235,1) 20%);
+	background-image: url('/media/background.png');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 header {
-	line-height: 50px;
-	height: 50px;
+	line-height: 70px;
+	height: 70px;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	text-align: right;
 	padding-right: 50px;
+	background: linear-gradient(0deg, rgba(236,236,236,1) 0%, rgba(247,247,247,1) 100%);
+	box-shadow: 0 0 6px rgba(0,0,0,0.1);
 	a {
 		display: inline-block;
 		font-weight: bold;
@@ -34,41 +40,32 @@ header {
 		color: #333;
 		&:hover { color: #000; }
 		&.phone {
-			color: $pink;
-			&:hover { color: darken($pink, 10); }
-		}
-		&.currency {
-			color: $pink;
-			background-image: url('/media/arrow-down.png');
-			background-position: 65px 18px;
+			color: $dark-brown;
+			background-image: url('/media/phone.png');
+			background-position: 0 26px;
 			background-repeat: no-repeat;
-			padding-right: 55px;
-			&:hover { color: darken($pink, 10); }
+			padding-left: 22px;
+			font-weight: 300;
+			font-size: 17px;
+			&:hover { color: darken($dark-brown, 10); }
 		}
-		&.basket {
-			background: $pink;
-			color: white;
-			height: 90px;
-			background-image: url('/media/basket.png');
-			background-position: center 38px;
-			background-repeat: no-repeat;
-			&:hover { background-color: darken($pink, 5); }
-		}
-
 	}
 }
 
 .logo {
-	width: 344px;
-	height: 53px;
-	background: url(/media/logo.png);
+	width: 50%;
+	height: 72px;
+	position: absolute;
+	left: 25%;
+	top: 0;
+	background: url(/media/logo.png) center center;
 	display: inline-block;
 	background-repeat: no-repeat;
 	cursor: pointer;
 }
 
 .banner {
-	background: $purple;
+	background: $brown;
 	color: white;
 	padding: 20px;
 	.search {
@@ -91,7 +88,7 @@ header {
 			content: "";
 			background-image: url('/media/search.png');
 			width: 40px;
-			height: 45px;
+			height: 50px;
 			display: inline-block;
 			background-repeat: no-repeat;
 			background-position: left center;
@@ -103,11 +100,11 @@ header {
 		text-align: center;
 		line-height: 30px;
 		h3 {
-			border-bottom: 1px solid $pink;
+			border-bottom: 1px solid $dark-brown;
 			max-width: 800px;
 			display: inline-block;
 			width: 100%;
-			color: $pink;
+			color: white;
 			line-height: 30px;
 		}
 		a {
@@ -173,12 +170,143 @@ header {
 	}
 }
 
+html[data-step="1"] .steps a:nth-child(1),
+html[data-step="2"] .steps a:nth-child(2),
+html[data-step="3"] .steps a:nth-child(3),
+ {
+	background: #282425;
+	&:hover { background: darken(#282425, 5); }
+}
+
+.checkout {
+	max-width: 520px;
+	width: 100%;
+	padding: 20px 0 50px 20px;
+}
+
+.page-container {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+}
+
 .page-container {
 	h1 {
-		text-align: center;
-		color: $pink;
+		text-align: right;
+		color: #252525;
 		padding: 20px 0;
-		font-size: 40px;
+		font-size: 28px;
+		font-weight: 300;
+		.steps {
+			border-bottom: 1px solid #999;
+			height: 17px;
+			position: relative;
+			float: left;
+			a {
+				cursor: pointer;
+				font-size: 25px;
+				line-height: 34px;
+				vertical-align: top;
+				background: rgb(235, 235, 235);
+				display: inline-block;
+				margin: 0 15px;
+				border: 1px solid #999;
+				border-radius: 50%;
+				width: 34px;
+				text-align: center;
+				color: #999;
+				&:hover { background: #ddd; }
+				&:first-child { margin-left: 0; }
+				&:last-child { margin-right: 0; }
+			}
+		}
+	}
+	form {
+		display: block;
+		background: white;
+		padding: 30px 0 0;
+		label {
+			text-transform: uppercase;
+			padding-left: 60px;
+			line-height: 20px;
+			font-size: 11px;
+			&[for="city"] { padding-left: 20px; }
+			&[for="rules"], &[for="privacy"] {
+				padding-left: 0;
+				text-transform: none;
+				display: inline-block;
+				white-space: normal;
+				width: calc(100% - 80px);
+				cursor: pointer;
+				user-select: none;
+				span {
+					text-decoration: underline;
+				}
+			}
+		}
+		input {
+			display: block;
+			margin-left: 60px;
+			margin-bottom: 10px;
+			padding: 5px;
+			vertical-align: top;
+			width: calc(100% - 140px);
+			&[type="checkbox"] {
+				width: 20px;
+				height: 20px;
+				padding: 5px;
+				margin: 0 20px;
+				display: inline-block;
+				border: 1px solid #808080;
+				margin-top: 5px;
+			}
+			&#zip {
+				display: inline-block;
+				width: 80px;
+			}
+			&#city {
+				display: inline-block;
+				width: 50%;
+				margin-left: 20px;
+			}
+			&[type="submit"] {
+				margin: 0;
+				display: inline-block;
+				width: 50%;
+				vertical-align: top;
+				background: #ad9a89;
+				border: 1px solid #9F8D7D;
+				height: 50px;
+				color: white;
+			}
+		}
+		a {
+			width: 50%;
+			display: inline-block;
+			padding: 5px;
+			border: 1px solid #E4D2C3;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 12px;
+			cursor: pointer;
+			&:hover {
+				background: #f9f9f9;
+			}
+			&.active {
+				background: #E4D2C3;
+				&:hover {
+					background: darken(#E4D2C3, 10);
+				}
+			}
+			&.big {
+				height: 50px;
+				line-height: 42px;
+				text-transform: none;
+			}
+		}
+		div.checks {
+			white-space: nowrap;
+		}
 	}
 	.block-container {
 		max-width: 1000px;
@@ -190,7 +318,7 @@ header {
 		font-size: 16px;
 		display: inline-block;
 		width: 27%;
-		background: $pink;
+		background: $brown;
 		vertical-align: top;
 		height: 350px;
 		margin: 0 3%;
@@ -198,7 +326,7 @@ header {
 		cursor: pointer;
 		color: white;
 		&:hover {
-			background: lighten($pink, 5);
+			background: lighten($dark-brown, 5);
 		}
 		span.v-center {
 			padding-top: 130px;
@@ -223,15 +351,14 @@ header {
 }
 
 footer {
-	background: #413d4c;
+	background: $dark-brown;
 	color: #eee;
 	text-align: center;
 	position: relative;
 	h3 {
-		background: rgba(50,50,50,0.7);
-		line-height: 60px;
+		background: linear-gradient(0deg, rgb(238, 238, 238) 0%, rgb(245, 245, 245) 100%);
+		line-height: 40px;
 		text-align: center;
-		padding-top: 20px;
 	}
 	h4 {
 		text-transform: uppercase;
@@ -259,7 +386,7 @@ footer {
 		background: #efefef;
 		border-radius: 50%;
 		width: 50px;
-		color: #413d4c;
+		color: $dark-brown;
 		font-weight: 600;
 		cursor: pointer;
 		height: 50px;
